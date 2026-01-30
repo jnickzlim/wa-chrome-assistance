@@ -1,0 +1,15 @@
+# Private backup files
+template-backup.json
+
+# Other common files to exclude
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+dist/
+build/
+*.zip
+*.tar.gz
