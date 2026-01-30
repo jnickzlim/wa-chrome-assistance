@@ -1,0 +1,1023 @@
+/* Scoped styles for WhatsApp Template Extension */
+#wa-template-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 320px;
+  /* Slightly wider */
+  max-height: 90vh;
+  min-width: 200px;
+  min-height: 100px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  border: 1px solid #e1e4e8;
+}
+
+/* Assist Mode Header Card */
+.wa-assist-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-right: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s;
+}
+
+.wa-assist-card:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.wa-assist-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: white;
+  user-select: none;
+}
+
+/* Switch & Slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 16px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #008069;
+}
+
+input:checked+.slider:before {
+  transform: translateX(12px);
+}
+
+.slider.round {
+  border-radius: 18px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Tabs */
+#wa-panel-tabs {
+  display: flex;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.wa-panel-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #54656f;
+  border-bottom: 2px solid transparent;
+}
+
+.wa-panel-tab.active {
+  color: #008069;
+  border-bottom-color: #008069;
+  background-color: #fff;
+}
+
+/* Views */
+.wa-panel-view {
+  display: none;
+  flex: 1;
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+.wa-panel-view.active {
+  display: flex;
+}
+
+/* Flow UI */
+#wa-flow-selector-container {
+  padding: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+#wa-flow-select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+#wa-flow-step-container {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wa-flow-question {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111b21;
+  margin-bottom: 8px;
+}
+
+.wa-flow-option {
+  padding: 10px 14px;
+  background-color: #f0f2f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.wa-flow-option:hover {
+  background-color: #e9edef;
+  border-color: #cce3de;
+}
+
+.wa-flow-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  /* Push to bottom */
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.wa-flow-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: #f0f2f5;
+  color: #54656f;
+}
+
+.wa-flow-btn:hover {
+  background-color: #e9edef;
+}
+
+.wa-flow-btn.danger {
+  color: #ea0038;
+}
+
+.wa-flow-btn.primary {
+  background-color: #008069;
+  color: white;
+}
+
+.wa-flow-btn.primary:hover {
+  background-color: #006d59;
+}
+
+.wa-flow-preview-box {
+  background-color: #f7f9fa;
+  border: 1px solid #e9edef;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  color: #54656f;
+}
+
+body.dark .wa-flow-preview-box {
+  background-color: #202c33;
+  border-color: #2a3942;
+  color: #8696a0;
+}
+
+/* Header Adjustments */
+
+#wa-template-panel.collapsed {
+  width: 80px !important;
+  height: 80px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+#wa-template-header {
+  padding: 12px 16px;
+  background-color: #008069;
+  /* WhatsApp Green */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  cursor: move;
+  user-select: none;
+}
+
+#wa-template-header .title {
+  font-size: 14px;
+}
+
+#wa-template-header .actions {
+  display: flex;
+  gap: 8px;
+}
+
+.wa-icon-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.wa-icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wa-textarea-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Search */
+#wa-template-search-container {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.wa-search-wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#wa-add-template-btn {
+  background-color: #00a884;
+  color: white;
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+#wa-add-template-btn:hover {
+  background-color: #008069;
+}
+
+#wa-template-search {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#wa-template-search:focus {
+  border-color: #008069;
+}
+
+/* List */
+#wa-template-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.wa-category-header {
+  padding: 8px 16px;
+  background-color: #f7f9fa;
+  font-size: 12px;
+  font-weight: bold;
+  color: #54656f;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.wa-category-header.favorites {
+  background-color: #fff9e6;
+  color: #fbba0a;
+  border-bottom: 1px solid #ffeeba;
+}
+
+.wa-template-item {
+  padding: 10px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f2f5;
+  transition: background 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wa-template-item:hover {
+  background-color: #f0f2f5;
+}
+
+.wa-template-title {
+  font-size: 14px;
+  color: #111b21;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.wa-star-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #c1c7cd;
+  padding: 4px;
+  transition: transform 0.2s, color 0.2s;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-star-btn:hover {
+  transform: scale(1.2);
+  color: #fbba0a;
+}
+
+.wa-star-btn.active {
+  color: #fbba0a;
+}
+
+
+/* Suggested Highlighting */
+.wa-template-item.suggested {
+  background-color: #dcf8c6;
+  /* Light green highlight */
+  border-left: 4px solid #008069;
+}
+
+.wa-template-item.suggested .wa-template-title {
+  color: #111b21 !important;
+  /* Force dark text on light green background */
+}
+
+/* Dark Mode Suggested Override */
+body.dark .wa-template-item.suggested {
+  background-color: #005c4b;
+  /* Darker green for dark mode */
+  border-left-color: #00a884;
+}
+
+body.dark .wa-template-item.suggested .wa-template-title {
+  color: #e9edef !important;
+}
+
+
+/* Floating Toggle Button (visible when collapsed) */
+#wa-template-toggle-btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #008069;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+
+/* Dark Mode Support (Basic) */
+@media (prefers-color-scheme: dark) {
+  /* This relies on system pref, but WA Web often forces dark mode via .dark class */
+}
+
+/* Check for WA Dark Mode Class on body */
+body.dark #wa-template-panel {
+  background-color: #111b21;
+  border-color: #2a3942;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark #wa-template-header {
+  background-color: #202c33;
+  border-bottom: 1px solid #2a3942;
+}
+
+body.dark #wa-template-search-container {
+  border-bottom-color: #2a3942;
+}
+
+body.dark #wa-template-search {
+  background-color: #2a3942;
+  border-color: #2a3942;
+  color: #e9edef;
+}
+
+body.dark #wa-template-search:focus {
+  border-color: #00a884;
+}
+
+body.dark .wa-category-header {
+  background-color: #202c33;
+  color: #8696a0;
+}
+
+body.dark .wa-category-header.favorites {
+  background-color: #2a2510;
+  color: #fbba0a;
+  border-bottom-color: #443c16;
+}
+
+body.dark .wa-star-btn {
+  color: #667781;
+}
+
+
+
+body.dark .wa-template-item {
+  border-bottom-color: #2a3942;
+}
+
+body.dark .wa-template-item:hover {
+  background-color: #202c33;
+}
+
+body.dark .wa-template-title {
+  color: #e9edef;
+}
+
+
+
+/* Dark Mode - Tabs */
+body.dark #wa-panel-tabs {
+  background-color: #202c33;
+  border-bottom-color: #2a3942;
+}
+
+body.dark .wa-panel-tab {
+  color: #8696a0;
+}
+
+body.dark .wa-panel-tab.active {
+  background-color: #111b21;
+  color: #00a884;
+  border-bottom-color: #00a884;
+}
+
+/* Dark Mode - Flow UI */
+body.dark #wa-flow-selector-container {
+  border-bottom-color: #2a3942;
+}
+
+body.dark #wa-flow-select {
+  background-color: #2a3942;
+  color: #e9edef;
+  border-color: #3b4a54;
+}
+
+body.dark .wa-flow-question {
+  color: #e9edef;
+}
+
+body.dark .wa-flow-option {
+  background-color: #202c33;
+  border-color: #2a3942;
+  color: #e9edef;
+}
+
+body.dark .wa-flow-option:hover {
+  background-color: #2a3942;
+  border-color: #3b4a54;
+}
+
+body.dark .wa-flow-controls {
+  border-top-color: #2a3942;
+}
+
+body.dark .wa-flow-btn {
+  background-color: #2a3942;
+  color: #e9edef;
+  border: 1px solid #3b4a54;
+}
+
+body.dark .wa-flow-btn:hover {
+  background-color: #3b4a54;
+}
+
+body.dark .wa-flow-btn.danger {
+  color: #ea0038;
+  border-color: #ea0038;
+}
+
+/* Dark Mode - Status Bar & Switch */
+body.dark .switch .slider {
+  background-color: #3b4a54;
+}
+
+body.dark .switch .slider:before {
+  background-color: #8696a0;
+}
+
+body.dark input:checked+.slider {
+  background-color: #00a884;
+}
+
+body.dark input:checked+.slider:before {
+  background-color: #111b21;
+}
+
+/* Toast Dark Mode */
+body.dark #wa-toast {
+  background-color: #3b4a54;
+  color: #e9edef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Resize Handle */
+#wa-resize-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+  z-index: 10000;
+  background: linear-gradient(135deg, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 60%, transparent 60%, transparent 70%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.1) 80%, transparent 80%);
+}
+
+body.dark #wa-resize-handle {
+  background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 60%, transparent 60%, transparent 70%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0.2) 80%, transparent 80%);
+}
+
+/* Multi-Edge Resize Handles */
+.wa-resize-handle {
+  position: absolute;
+  z-index: 10000;
+  background: transparent;
+}
+
+#wa-resize-handle-r {
+  right: 0;
+  top: 0;
+  bottom: 10px;
+  width: 6px;
+  cursor: ew-resize;
+}
+
+#wa-resize-handle-l {
+  left: 0;
+  top: 0;
+  bottom: 10px;
+  width: 6px;
+  cursor: ew-resize;
+}
+
+#wa-resize-handle-b {
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 6px;
+  cursor: ns-resize;
+}
+
+#wa-resize-handle-br {
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+  background: linear-gradient(135deg, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 60%, transparent 60%, transparent 70%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.1) 80%, transparent 80%);
+}
+
+#wa-resize-handle-bl {
+  left: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nesw-resize;
+}
+
+body.dark #wa-resize-handle-br {
+  background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 60%, transparent 60%, transparent 70%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0.2) 80%, transparent 80%);
+}
+
+/* Template Editor Overlay - Premium Modal */
+#wa-edit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: 10001;
+  display: none;
+  flex-direction: column;
+  padding: 24px;
+  box-sizing: border-box;
+  animation: waFadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes waFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+body.dark #wa-edit-overlay {
+  background-color: #111b21;
+}
+
+#wa-edit-overlay.active {
+  display: flex !important;
+}
+
+#wa-edit-header {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111b21;
+}
+
+.wa-edit-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.wa-edit-meta input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background-color: #f8f9fa;
+  color: #111b21;
+}
+
+.wa-edit-meta input:focus {
+  border-color: #008069;
+  background-color: #fff;
+}
+
+body.dark .wa-edit-meta input {
+  background-color: #2a3942;
+  border-color: #3b4a54;
+  color: #e9edef;
+}
+
+body.dark #wa-edit-header {
+  color: #e9edef;
+}
+
+#wa-edit-textarea {
+  flex: 1;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e1e4e8;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  resize: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  outline: none;
+  background-color: #f8f9fa;
+  color: #111b21;
+}
+
+body.dark #wa-edit-textarea {
+  background-color: #2a3942;
+  border-color: #3b4a54;
+  color: #e9edef;
+}
+
+#wa-edit-textarea:focus {
+  border-color: #008069;
+  box-shadow: 0 0 0 3px rgba(0, 128, 105, 0.1);
+}
+
+.wa-edit-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.wa-edit-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.wa-edit-btn.cancel {
+  background-color: #f0f2f5;
+  color: #54656f;
+}
+
+.wa-edit-btn.confirm {
+  background-color: #008069;
+  color: white;
+}
+
+#wa-edit-save {
+  background-color: #f0f2f5;
+  color: #008069;
+  border: 1px solid #008069;
+}
+
+
+#wa-refine-btn {
+  background-color: #008069;
+  color: white;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#wa-refine-btn:hover {
+  background-color: #202c33;
+}
+
+#wa-edit-save:hover {
+  background-color: #e7f5f2;
+}
+
+body.dark #wa-edit-save {
+  background-color: #202c33;
+  color: #00a884;
+  border-color: #00a884;
+}
+
+/* Common Words UI */
+#wa-common-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.wa-common-word-btn {
+  padding: 6px 14px;
+  background-color: #f0f2f5;
+  border: 1px solid #e1e4e8;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #54656f;
+  font-weight: 500;
+}
+
+.wa-common-word-btn:hover {
+  background-color: #008069;
+  color: white;
+  border-color: #008069;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wa-common-word-btn.emoji {
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.wa-shortcut-divider {
+  flex-basis: 100%;
+  /* Forces the next item to start on a new line */
+  height: 0;
+  /* Optional: Makes the break element visually collapsed */
+  margin: 0;
+  padding: 0;
+}
+
+#wa-other-templates {
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.wa-shortcut-label {
+  font-size: 11px;
+  color: #667781;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.wa-shortcut-scroll {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.wa-shortcut-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.wa-shortcut-scroll::-webkit-scrollbar-thumb {
+  background: #dfe5e7;
+  border-radius: 4px;
+}
+
+.wa-common-word-btn.template-shortcut {
+  padding: 6px 14px;
+  background-color: #f0f2f5;
+  color: #008069;
+  border: 1px solid #d1d7db;
+  white-space: nowrap;
+}
+
+.wa-common-word-btn.template-shortcut:hover {
+  background-color: #008069;
+  color: white;
+  border-color: #008069;
+}
+
+body.dark .wa-common-word-btn.template-shortcut {
+  background-color: #2a3942;
+  color: #00a884;
+  border-color: #3b4a54;
+}
+
+body.dark .wa-common-word-btn.template-shortcut:hover {
+  background-color: #00a884;
+  color: #111b21;
+}
+
+body.dark .wa-shortcut-divider {
+  background-color: #3b4a54;
+}
+
+body.dark .wa-common-word-btn {
+  background-color: #2a3942;
+  border-color: #3b4a54;
+  color: #e9edef;
+}
+
+body.dark .wa-common-word-btn:hover {
+  background-color: #00a884;
+  border-color: #00a884;
+}
+
+/* Language Selector */
+#wa-language-selector {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.wa-lang-btn {
+  padding: 4px 10px;
+  background-color: #f0f2f5;
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #54656f;
+  transition: all 0.2s;
+}
+
+.wa-lang-btn:hover {
+  background-color: #e9edef;
+}
+
+.wa-lang-btn.active {
+  background-color: #008069;
+  color: white;
+  border-color: #008069;
+}
+
+body.dark .wa-lang-btn {
+  background-color: #2a3942;
+  border-color: #3b4a54;
+  color: #e9edef;
+}
+
+body.dark .wa-lang-btn.active {
+  background-color: #00a884;
+  border-color: #00a884;
+}
+
+/* Translation Loading Indicator */
+#wa-edit-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 8px;
+  gap: 10px;
+  color: #54656f;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#wa-edit-loading.active {
+  display: flex;
+}
+
+body.dark #wa-edit-loading {
+  background-color: rgba(11, 20, 26, 0.8);
+  color: #e9edef;
+}
+
+.wa-loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #00a884;
+  border-radius: 50%;
+  animation: wa-spin 1s linear infinite;
+}
+
+@keyframes wa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

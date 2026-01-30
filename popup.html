@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #111b21;
+      --secondary-text: #54656f;
+      --primary-color: #008069;
+      --border-color: #e1e4e8;
+      --btn-bg: #f0f2f5;
+      --btn-hover: #e1e4e8;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #111b21;
+        --text-color: #e9edef;
+        --secondary-text: #8696a0;
+        --primary-color: #00a884;
+        --border-color: #2a3942;
+        --btn-bg: #2a3942;
+        --btn-hover: #3b4a54;
+      }
+    }
+
+    body {
+      width: 280px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding: 12px;
+      background-color: var(--btn-bg);
+      border-radius: 8px;
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: var(--btn-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    button:hover {
+      background-color: var(--btn-hover);
+    }
+
+    .primary {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+    }
+
+    .primary:hover {
+      background-color: #006d59;
+      opacity: 0.9;
+    }
+  </style>
+  <script src="utils.js"></script>
+  <script src="popup.js" defer></script>
+</head>
+
+<body>
+  <h2>WA Templates</h2>
+
+  <div class="row">
+    <span>Enable Extension</span>
+    <input type="checkbox" id="toggle-enable">
+  </div>
+
+  <button id="open-options">Manage Templates</button>
+</body>
+
+</html>
