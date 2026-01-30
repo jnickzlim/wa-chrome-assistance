@@ -1,6 +1,9 @@
 # Private backup files
 template-backup.json
 
+# Local documentation
+QWEN.md
+
 # Other common files to exclude
 *.log
 *.tmp
